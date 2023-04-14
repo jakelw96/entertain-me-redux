@@ -47,6 +47,7 @@ const AppNavbar = () => {
           )}
           <Navbar.Toggle aria-controls="responsive-navbar-nav" />
           <Navbar.Collapse id="responsive-navbar-nav">
+            {Auth.loggedIn() && (
             <Nav className="me-auto">
               <NavDropdown title="The Arena" id="collasible-nav-dropdown">
                 <NavDropdown.Item href="#movies" as={Link} to="/movie">
@@ -62,6 +63,7 @@ const AppNavbar = () => {
                 <NavDropdown.Item href="#feed" as={Link} to="/home">Feed</NavDropdown.Item>
               </NavDropdown>
             </Nav>
+            )}
             <Nav>
               {/* if user is logged in show saved media and logout */}
               {Auth.loggedIn() ? (
